@@ -1,2 +1,3 @@
 /public/p5/
-/nodes_modules/
+node_modules/
+package-lock.json
