@@ -36,20 +36,25 @@ function draw(){
 		  allDead = false
 	  }
   }
+  zelda.update()
   zelda.show()
   if(allDead){
 	  // noLoop()
   }
-}
+  var speedX = 0
+  var speedY = 0
 
-function keyPressed() {
-  if (keyCode === LEFT_ARROW) {
-    zelda.vector.y = 1
-  } else if (keyCode === RIGHT_ARROW) {
-    zelda.vector.y = -1
-  }
-}
-function keyReleased() {
-    zelda.vector.y = 0
-  return false; // prevent any default behavior
+  if (keyIsDown(LEFT_ARROW))
+    speedX = -1;
+
+  if (keyIsDown(RIGHT_ARROW))
+    speedX = 1;
+  
+  if (keyIsDown(UP_ARROW))
+    speedY = -1;
+
+  if (keyIsDown(DOWN_ARROW))
+    speedY = 1;
+
+  zelda.setSpeed(speedX,speedY)
 }
